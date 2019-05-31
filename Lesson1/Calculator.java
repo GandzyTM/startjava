@@ -1,32 +1,31 @@
 public class Calculator {
     public static void main(String[] args) {
-        int a = 3;
-        int b = 5;
+        int var1 = 3;
+        int var2 = 5;
         char znak = '^';
 
         if (znak == '+') {
-            System.out.println(a + b);
+            System.out.println(var1 + var2);
         }
         if (znak == '-') {
-            System.out.println(a - b);
+            System.out.println(var1 - var2);
         }
         if (znak == '/') {
-            System.out.println(a / b);
+            System.out.println(var1 / var2);
         }
         if (znak == '*') {
-            System.out.println(a * b);
+            System.out.println(var1 * var2);
         }
         if (znak == '^') {
             int res = 1;
-            for (int i = 1; i <=b ; i++) {
-                res = res * a;
+            for (int i = 1; i <= var2; i++) {
+                res = res * var1;
                 System.out.println(res);
             }
         }
         if (znak == '%') {
             System.out.println(a % b);
-        }
-        else {
+        }  else {
             System.out.println(znak + " error");
         }
     }
