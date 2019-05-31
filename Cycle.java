@@ -11,9 +11,15 @@ public class Cycle {
             System.out.println(i);
         }
         System.out.println("------------------");
+
+        int min = 10;
+        int max = 20;
+        int n = (max - min)/2;
+        System.out.println((min + max)/2 * n);
+
         int t = 10;
         do {
-            t ++;
+            t++;
             if (t % 2 != 0) {
                 System.out.println(t);
             }
