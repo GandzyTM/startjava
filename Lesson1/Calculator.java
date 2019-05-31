@@ -19,7 +19,7 @@ public class Calculator {
         if (value == '^') {
             int res = 1;
             for (int i = 1; i <= var2; i++) {
-                res = res * var1;
+                res *= var1;
             }
             System.out.println(res);
         }
