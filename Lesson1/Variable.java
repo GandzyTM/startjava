@@ -2,19 +2,19 @@ public class Variable {
     public static void main(String[] args) {
         int hdd = 250;
         byte cpu = 1;
-        short cpu_core = 2;
-        long hdd_kbyte = 262144000;
-        float cpu_hz = 2.30f;
+        short cpuCore = 2;
+        long hddKbyte = 262144000;
+        float cpuHz = 2.30f;
         double memory = 3.4d;
-        char logical_disk = 'C';
+        char logicalDisk = 'C';
         boolean b = true;
-        System.out.println("My comp has next params:\nHDD in Kb: " + hdd_kbyte
+        System.out.println("My comp has next params:\nHDD in Kb: " + hddKbyte
         + "\nHDD in Gb: " + hdd
         + "\nCPU socket: " + cpu
-        + "\nCPU core: " + cpu_core
-        + "\nCPU GHz: " + cpu_hz
+        + "\nCPU core: " + cpuCore
+        + "\nCPU GHz: " + cpuHz
         + "\nRAM Gb: " + memory
-        + "\nLogical disk: " + logical_disk
+        + "\nLogical disk: " + logicalDisk
         + "\nIs it norm: " + b);
     }
 }
