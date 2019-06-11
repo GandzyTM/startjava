@@ -5,12 +5,12 @@ public class ConditionalStatement {
             System.out.println("Your age is more then 20");
         }
 
-        String sex = "Male";
-        if (sex == "Male") {
+        boolean isMale = true;
+        if (isMale) {
             System.out.println("You are a man");
         }
 
-        if (sex == "Female") {
+        if (! isMale) {
             System.out.println("You are woman");
         }
 
