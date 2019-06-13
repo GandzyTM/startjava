@@ -8,6 +8,7 @@ public class Variable {
         double memory = 3.4d;
         char logicalDisk = 'C';
         boolean isPowerfull = true;
+        
         System.out.println("My comp has next params:\nHDD in Kb: " + hddKbyte
         + "\nHDD in Gb: " + hdd
         + "\nCPU socket: " + cpu
