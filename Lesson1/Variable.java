@@ -7,7 +7,7 @@ public class Variable {
         float cpuHz = 2.30f;
         double memory = 3.4d;
         char logicalDisk = 'C';
-        boolean b = true;
+        boolean isPowerfull = true;
         System.out.println("My comp has next params:\nHDD in Kb: " + hddKbyte
         + "\nHDD in Gb: " + hdd
         + "\nCPU socket: " + cpu
@@ -15,6 +15,6 @@ public class Variable {
         + "\nCPU GHz: " + cpuHz
         + "\nRAM Gb: " + memory
         + "\nLogical disk: " + logicalDisk
-        + "\nIs it norm: " + b);
+        + "\nIs it norm: " + isPowerfull);
     }
 }
