@@ -17,8 +17,8 @@ public class Cycle {
         System.out.println("------- All nums sum with DO WHILE [10,20] -----------");
         int min = 10;
         int max = 20;
-        int n = (max - min)/2;
-        System.out.println((min + max)/2 * n);
+        int n = (max - min) / 2;
+        System.out.println((min + max) / 2 * n);
         System.out.println("------------------");
     }
 }
