@@ -7,25 +7,26 @@ public class Calculator {
         if (value == '+') {
             System.out.println(num1 + num2);
         }
-        if (value == '-') {
+        else if (value == '-') {
             System.out.println(num1 - num2);
         }
-        if (value == '/') {
+        else if (value == '/') {
             System.out.println(num1 / num2);
         }
-        if (value == '*') {
+        else if (value == '*') {
             System.out.println(num1 * num2);
         }
-        if (value == '^') {
-            int res = 1;
+        else if (value == '^') {
+            int result = 1;
             for (int i = 1; i <= num2; i++) {
-                res *= num1;
+                result *= num1;
             }
-            System.out.println(res);
+            System.out.println(result);
         }
-        if (value == '%') {
+        else if (value == '%') {
             System.out.println(num1 % num2);
-        }  else {
+        }  
+        else {
             System.out.println(value + " error");
         }
     }
