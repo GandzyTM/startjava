@@ -7,8 +7,10 @@ public class MyFirstGame {
         while (userNum != computerNum) {
             if (userNum < 0) {
                 System.out.println("You entered num < 0");
+                break;
             } else if (userNum > 100) {
                 System.out.println("You entered num > 100");
+                break;
             } else {
                 if (computerNum > userNum) {
                     System.out.println("Entered number LESS than the hidden number. Re enter please: ");
