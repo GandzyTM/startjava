@@ -23,8 +23,8 @@ public class MyFirstGame {
                         userNum--;
                     }
                 }
-            }
-        }
+            } // end while
+        } // end if 
 
         if (computerNum == userNum) {
             System.out.println("You are damn right!!! The hidden Number is: " + userNum);
