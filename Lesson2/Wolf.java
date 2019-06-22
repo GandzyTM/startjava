@@ -24,8 +24,6 @@ public class Wolf {
     void hunt() {
 
     }
-
-
 }
 
 class WolfTest {
