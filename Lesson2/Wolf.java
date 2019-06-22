@@ -42,6 +42,7 @@ class WolfTest {
                 + "\nname: " + wolf.name
                 + "\nsex: " + wolf.sex
                 + "\nweight: " + wolf.weight);
+	
         wolf.go();
         wolf.howl();
         wolf.hunt();
