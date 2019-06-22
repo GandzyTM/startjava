@@ -1,53 +1,72 @@
 public class Wolf {
-    char sex;
-    String name;
-    float weight;
-    int age;
-    String color;
+    private char sex;
+    private String name;
+    private float weight;
+    private int age;
+    private String color;
 
-    void go() {
+    public char getSex() {
+        return sex;
+    }
+
+    public void setSex(char sex) {
+        this.sex = sex;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if (age > 8) {
+            System.out.println("Incorrect age");
+        } else {
+            this.age = age;
+        }
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void go() {
         System.out.println("Go go go");
     }
 
-    void sit() {
+    public void sit() {
         System.out.println("Sit down");
     }
 
-    void run() {
+    public void run() {
         System.out.println("Run run run");
     }
 
-    void howl() {
+    public void howl() {
         System.out.println("Whoooo");
     }
 
-    void hunt() {
+    public void hunt() {
         System.out.println("Hunting");
-    }
-}
-
-class WolfTest {
-    public static void main(String[] args) {
-        Wolf wolf = new Wolf();
-
-        wolf.age = 14;
-        wolf.color = "Grey";
-        wolf.name = "Muhtar";
-        wolf.sex = 'M';
-        wolf.weight = 45.7f;
-
-        System.out.println(wolf.name + " has next params: "
-                + "\nage: " + wolf.age
-                + "\ncolor: " + wolf.color
-                + "\nname: " + wolf.name
-                + "\nsex: " + wolf.sex
-                + "\nweight: " + wolf.weight);
-	
-        wolf.go();
-        wolf.howl();
-        wolf.hunt();
-        wolf.run();
-        wolf.sit();
     }
 }
 

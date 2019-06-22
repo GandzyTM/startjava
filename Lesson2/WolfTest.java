@@ -2,18 +2,18 @@ class WolfTest {
     public static void main(String[] args) {
         Wolf wolf = new Wolf();
 
-        wolf.age = 14;
-        wolf.color = "Grey";
-        wolf.name = "Muhtar";
-        wolf.sex = 'M';
-        wolf.weight = 45.7f;
+        wolf.setAge(14);
+        wolf.setColor("Grey");
+        wolf.setName("Muhtar");
+        wolf.setSex('M');
+        wolf.setWeight(45.7f);
 
-        System.out.println(wolf.name + " has next params: "
-                + "\nage: " + wolf.age
-                + "\ncolor: " + wolf.color
-                + "\nname: " + wolf.name
-                + "\nsex: " + wolf.sex
-                + "\nweight: " + wolf.weight);
+        System.out.println(wolf.getName() + " has next params: "
+                + "\nage: " + wolf.getAge()
+                + "\ncolor: " + wolf.getColor()
+                + "\nname: " + wolf.getName()
+                + "\nsex: " + wolf.getSex()
+                + "\nweight: " + wolf.getWeight());
 
         wolf.go();
         wolf.howl();
