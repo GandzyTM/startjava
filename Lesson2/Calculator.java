@@ -1,14 +1,9 @@
-import java.util.Scanner;
-
 public class Calculator {
     private int num1;
     private int num2;
     private String operation;
 
-    public void setNum1() {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Введите первое число: ");
-        int num1 = scan.nextInt();
+    public void setNum1(int num1) {
         this.num1 = num1;
     }
 
@@ -16,10 +11,7 @@ public class Calculator {
         return num1;
     }
 
-    public void setNum2() {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Введите второе число: ");
-        int num2 = scan.nextInt();
+    public void setNum2(int num2) {
         this.num2 = num2;
     }
 
@@ -27,10 +19,7 @@ public class Calculator {
         return num2;
     }
 
-    public void setOperation() {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Введите знак математической операции: ");
-        String operation = scan.nextLine();
+    public void setOperation(String operation) {
         this.operation = operation;
     }
 
