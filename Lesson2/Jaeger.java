@@ -81,22 +81,20 @@ class Jaeger {
         this.armor = armor;
     }
 
-    void run(){
-
+    public void run() {
+        System.out.println("Running...");
     }
 
-    void go() {
-
+    public void go() {
+        System.out.println("Going...");
     }
 
-    void jump() {
-
+    public void jump() {
+        System.out.println("Jumping...");
     }
 
-    void shoot() {
-
+    public void shoot() {
+        System.out.println("Shooting...");
     }
-
-
 }
 
