@@ -7,51 +7,39 @@ public class Calculator {
         this.num1 = num1;
     }
 
-    public int getNum1() {
-        return num1;
-    }
-
     public void setNum2(int num2) {
         this.num2 = num2;
-    }
-
-    public int getNum2() {
-        return num2;
     }
 
     public void setOperation(String operation) {
         this.operation = operation;
     }
 
-    public String getOperation() {
-        return operation;
-    }
-
     public int getResult() {
-        int mathOperation = 0;
-        switch (getOperation()) {
+        int result = 0;
+        switch (operation) {
             case "+":
-                mathOperation = getNum1() + getNum2();
+                result = num1 + num2;
                 break;
             case "-":
-                mathOperation = getNum1() - getNum2();
+                result = num1 - num2;
                 break;
             case "/":
-                mathOperation = getNum1() / getNum2();
+                result = num1 / num2;
                 break;
             case "*":
-                mathOperation = getNum1() * getNum2();
+                result = num1 * num2;
                 break;
             case "%":
-                mathOperation = getNum1() % getNum2();
+                result = num1 % num2;
                 break;
             case "^":
-                mathOperation = 1;
-                for (int i = 1; i <= getNum2(); i++) {
-                    mathOperation *= getNum1();
+                result = 1;
+                for (int i = 1; i <= num2; i++) {
+                    result *= num1;
                 }
                 break;
         }
-        return mathOperation;
+        return result;
     }
 }
