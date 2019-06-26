@@ -93,7 +93,7 @@ class Jaeger {
         System.out.println("Jumping...");
     }
 
-    public void shoot() {
+    private void shoot() {
         System.out.println("Shooting...");
     }
 }
