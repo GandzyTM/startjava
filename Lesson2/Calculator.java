@@ -15,7 +15,7 @@ public class Calculator {
         this.operation = operation;
     }
 
-    public int getResult() {
+    public int calculate() {
         int result = 0;
         switch (operation) {
             case "+":
