@@ -18,12 +18,17 @@ class CalculatorTest {
 
             System.out.println(calc.calculate());
 
-            System.out.print("Хотите продолжить? [да/нет]: ");
-            String choice = scan.next();
-            if (choice.equals("нет")) {
-                answer = false;
+            while (true) {
+                System.out.print("Хотите продолжить? [да/нет]: ");
+                String choice = scan.next();
+                if (choice.equals("нет")) {
+                    answer = false;
+                    break;
+                } else if (choice.equals("да")) {
+                    answer = true;
+                    break;
+                }
             }
-
         }
     }
 }
