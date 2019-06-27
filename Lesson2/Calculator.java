@@ -39,6 +39,8 @@ public class Calculator {
                     result *= num1;
                 }
                 break;
+            default:
+                System.out.println("Вы ввели неверный знак математической операции");
         }
         return result;
     }
