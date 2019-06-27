@@ -9,6 +9,19 @@ class Jaeger {
     private int armor;
     private int heatPoints;
 
+    public Jaeger(String modelName, String mark, String origin, float height, float weight
+            , int armor, int speed, int strength, int heatPoints) {
+        this.modelName = modelName;
+        this.mark = mark;
+        this.origin = origin;
+        this.height = height;
+        this.weight = weight;
+        this.armor = armor;
+        this.speed = speed;
+        this.strength = strength;
+        this.heatPoints = heatPoints;
+    }
+
     public String getModelName() {
         return modelName;
     }
@@ -43,19 +56,6 @@ class Jaeger {
 
     public int getHeatPoints() {
         return heatPoints;
-    }
-
-    public Jaeger(String modelName, String mark, String origin, float height, float weight
-                    , int armor, int speed, int strength, int heatPoints) {
-        this.modelName = modelName;
-        this.mark = mark;
-        this.origin = origin;
-        this.height = height;
-        this.weight = weight;
-        this.armor = armor;
-        this.speed = speed;
-        this.strength = strength;
-        this.heatPoints = heatPoints;
     }
 
     public void run() {
