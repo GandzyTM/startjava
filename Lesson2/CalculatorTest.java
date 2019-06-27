@@ -1,39 +1,30 @@
-public class Calculator {
-    private int num1;
-    private int num2;
-    private String operation;
+import java.util.Scanner;
 
-    public void setNum1(int num1) {
-        this.num1 = num1;
-    }
+class CalculatorTest {
+    public static void main(String[] args) {
+        int answer = 1;
+        while (answer == 1) {
+            Calculator calc = new Calculator();
+            Scanner scan = new Scanner(System.in);
 
-    public void setNum2(int num2) {
-        this.num2 = num2;
-    }
+            System.out.print("Введите первое число: ");
+            calc.setNum1(scan.nextInt());
 
-    public void setOperation(String operation) {
-        this.operation = operation;
-    }
+            System.out.print("Введите знак математической операции: ");
+            calc.setOperation(scan.next());
 
-    public int getResult() {
-        switch (operation) {
-            case "+":
-                return num1 + num2;
-            case "-":
-                return num1 - num2;
-            case "/":
-                return num1 / num2;
-            case "*":
-                return num1 * num2;
-            case "%":
-                return num1 % num2;
-            case "^":
-                int result = 1;
-                for (int i = 1; i <= num2; i++) {
-                    result *= num1;
-                }
-            return result;
+            System.out.print("Введите второе число: ");
+            calc.setNum2(scan.nextInt());
+
+            System.out.println(calc.getResult());
+
+            System.out.print("Хотите продолжить? [да/нет]: ");
+            String choice = scan.next();
+            if (choice.equals("нет")) {
+                answer = 0;
+            } else {
+                answer = 1;
+            }
         }
-        return 0;
     }
 }
