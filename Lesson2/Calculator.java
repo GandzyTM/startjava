@@ -16,32 +16,26 @@ public class Calculator {
     }
 
     public int calculate() {
-        int result = 0;
         switch (operation) {
             case "+":
-                result = num1 + num2;
-                break;
+                return num1 + num2;
             case "-":
-                result = num1 - num2;
-                break;
+                return num1 - num2;
             case "/":
-                result = num1 / num2;
-                break;
+                return num1 / num2;
             case "*":
-                result = num1 * num2;
-                break;
+                return num1 * num2;
             case "%":
-                result = num1 % num2;
-                break;
+                return num1 % num2;
             case "^":
-                result = 1;
+                int result = 1;
                 for (int i = 1; i <= num2; i++) {
                     result *= num1;
                 }
-                break;
+            return result;
             default:
-                System.out.println("Вы ввели неверный знак математической операции");
+                System.out.println("Неверный знак математической операции");
         }
-        return result;
+        return 0;
     }
 }
