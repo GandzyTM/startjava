@@ -32,7 +32,7 @@ public class Calculator {
                 for (int i = 1; i <= num2; i++) {
                     result *= num1;
                 }
-            return result;
+                return result;
             default:
                 System.out.println("Неверный знак математической операции");
         }
