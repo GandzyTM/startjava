@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 class CalculatorTest {
     public static void main(String[] args) {
-        boolean answer = true;
-        while (answer == true) {
+        String choice = "да";
+        while (choice.equals("да")) {
             Calculator calc = new Calculator();
             Scanner scan = new Scanner(System.in);
 
@@ -18,14 +18,12 @@ class CalculatorTest {
 
             System.out.println(calc.calculate());
 
-            while (true) {
+            while (!choice.equals("да") || !choice.equals("нет")) {
                 System.out.print("Хотите продолжить? [да/нет]: ");
-                String choice = scan.next();
+                choice = scan.next();
                 if (choice.equals("нет")) {
-                    answer = false;
                     break;
                 } else if (choice.equals("да")) {
-                    answer = true;
                     break;
                 }
             }
