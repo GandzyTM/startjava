@@ -18,14 +18,10 @@ class CalculatorTest {
 
             System.out.println(calc.calculate());
 
-            while (!choice.equals("да") || !choice.equals("нет")) {
+            choice = "";
+            while (!choice.equals("да") && !choice.equals("нет")) {
                 System.out.print("Хотите продолжить? [да/нет]: ");
                 choice = scan.next();
-                if (choice.equals("нет")) {
-                    break;
-                } else if (choice.equals("да")) {
-                    break;
-                }
             }
         }
     }
