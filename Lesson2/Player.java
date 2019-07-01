@@ -1,5 +1,3 @@
-package GuessNumber;
-
 public class Player {
     private int userNum;
     private int computerNum;
