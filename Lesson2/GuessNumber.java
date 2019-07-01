@@ -1,23 +1,50 @@
-import java.util.Random;
 import java.util.Scanner;
 
 public class GuessNumber {
+    private String name;
+    private int userNum;
     private int computerNum;
 
-    public int getComputerNum() {
-        Random random = new Random();
-        computerNum = random.nextInt(100);
-        return computerNum;
+    public GuessNumber(int userNum, int computerNum) {
+        this.userNum = userNum;
+        this.computerNum = computerNum;
     }
 
     public void playGame() {
+
+        while(computerNum != userNum) {
+            if (userNum < 0 || userNum > 100) {
+                System.out.println("You entered number < 0 or > 100");
+                if (userNum < 0) {
+                    ++userNum;
+                } else if (userNum > 100) {
+                    --userNum;
+                }
+            }
+
+            if (userNum >= 0 && userNum <= 100) {
+                if (computerNum > userNum) {
+                    System.out.println("Entered number LESS than the hidden number. Re enter please: ");
+                    ++userNum;
+                } else if (computerNum < userNum) {
+                    System.out.println("Entered number GREATER than the hidden number. Re enter please: ");
+                    --userNum;
+                }
+            }
+        }
+
         Scanner scan = new Scanner(System.in);
-        Player player1 = new Player("Player1");
+        String choice;
+        do {
+            System.out.print("Хотите продолжить? [да/нет]: ");
+            choice = scan.next();
+        } while (!choice.equals("да") && !choice.equals("нет"));
 
-        System.out.print("Введите число от 0 до 100: ");
-        player1.setUserNum(scan.nextInt());
+//        String choice = "да";
+//        while (choice.equals("да")) {
+            // TO DO
 
-        System.out.println(player1.getPlayerName() + " ввел: " + player1.getUserNum());
-        System.out.println(getComputerNum());
-    }
+//        } // end while
+    } // end void playGame
 }
+
