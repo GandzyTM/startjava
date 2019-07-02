@@ -1,3 +1,6 @@
+package GuessNumber;
+
+import java.util.Random;
 import java.util.Scanner;
 
 public class GuessNumber {
@@ -5,13 +8,14 @@ public class GuessNumber {
     private int userNum;
     private int computerNum;
 
-    public GuessNumber(int userNum, int computerNum) {
+    public GuessNumber(int userNum) {
         this.userNum = userNum;
-        this.computerNum = computerNum;
     }
 
     public void playGame() {
 
+        Random random = new Random();
+        computerNum = random.nextInt(100);
         while(computerNum != userNum) {
             if (userNum < 0 || userNum > 100) {
                 System.out.println("You entered number < 0 or > 100");
@@ -31,20 +35,9 @@ public class GuessNumber {
                     --userNum;
                 }
             }
-        }
-
-        Scanner scan = new Scanner(System.in);
-        String choice;
-        do {
-            System.out.print("Хотите продолжить? [да/нет]: ");
-            choice = scan.next();
-        } while (!choice.equals("да") && !choice.equals("нет"));
-
-//        String choice = "да";
-//        while (choice.equals("да")) {
-            // TO DO
-
-//        } // end while
+        } // end of main while
+        System.out.println("You are right!!! it is a " + computerNum);
     } // end void playGame
 }
+
 
