@@ -1,22 +1,26 @@
+package GuessNumber;
+
+import java.util.Scanner;
+
 public class Player {
-    private int userNum;
-    private int computerNum;
-    private String playerName;
+    private int number;
+    private String name;
 
-    public Player(String playerName, int userNum) {
-        this.playerName = playerName;
-        this.userNum = userNum;
+    public Player() {
+        Scanner scan = new Scanner(System.in);
+        this.name = scan.next();
     }
 
-    public String getPlayerName() {
-        return playerName;
+    public String getName() {
+        return name;
     }
 
-    public int getUserNum() {
-        return userNum;
+    public int getNumber() {
+        return number;
     }
 
-    public void setUserNum(int userNum) {
-        this.userNum = userNum;
+    public void setNumber() {
+        Scanner scan = new Scanner(System.in);
+        this.number = scan.nextInt();
     }
 }
