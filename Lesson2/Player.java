@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Player {
     private int number;
     private String name;
-    private boolean result;
 
     public Player() {
         Scanner scan = new Scanner(System.in);
