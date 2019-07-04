@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class GuessNumberTest {
     public static void main(String[] args) {
-        String choice;
-        do {
+        String choice = "да";
+        while (choice.equals("да")) {
             Scanner scan = new Scanner(System.in);
 
             System.out.println("First player enter your name: ");
@@ -14,22 +14,16 @@ public class GuessNumberTest {
 
             System.out.println("Computer got a number. What number do you think?");
 
-            boolean result = false;
-            while (!result) {
-                GuessNumber playGame = new GuessNumber();
-                System.out.print(player1.getName() + " please enter your number: ");
-                player1.setNumber();
-                playGame.playGame(player1.getNumber());
+            GuessNumber playGame = new GuessNumber();
+//            System.out.print(player1.getName() + " please enter your number: ");
+            playGame.playGame();
 
-                System.out.print(player2.getName() + " please enter your number: ");
-                player2.setNumber();
-                playGame.playGame(player2.getNumber());
-
-            }
-
-        System.out.print("Хотите продолжить? [да/нет]: ");
-        choice = scan.next();
-        } while (!choice.equals("да") && !choice.equals("нет"));
+//            System.out.print(player2.getName() + " please enter your number: ");
+//            playGame.playGame();
+            do {
+                System.out.print("Хотите продолжить? [да/нет]: ");
+                choice = scan.next();
+            } while (!choice.equals("да") && !choice.equals("нет"));
+        } // end of while
     } // end of method main
 }
-
