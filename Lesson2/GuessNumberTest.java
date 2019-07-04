@@ -5,21 +5,17 @@ public class GuessNumberTest {
         String choice = "да";
         while (choice.equals("да")) {
             Scanner scan = new Scanner(System.in);
-
             System.out.println("First player enter your name: ");
             Player player1 = new Player();
             System.out.println("Second player enter your name: ");
             Player player2 = new Player();
             System.out.println("Today play: " + player1.getName() + " " + player2.getName());
-
+            
             System.out.println("Computer got a number. What number do you think?");
 
             GuessNumber playGame = new GuessNumber();
-//            System.out.print(player1.getName() + " please enter your number: ");
             playGame.playGame();
-
-//            System.out.print(player2.getName() + " please enter your number: ");
-//            playGame.playGame();
+            
             do {
                 System.out.print("Хотите продолжить? [да/нет]: ");
                 choice = scan.next();
