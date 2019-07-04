@@ -5,9 +5,8 @@ public class GuessNumber {
     private int computerNum = random.nextInt(100);
     private int userNum;
 
-    public void playGame() {
+    public void playGame(Player player) {
         while(computerNum != userNum) {
-            Player player = new Player();
             System.out.print(player.getName() + " please enter your number: ");
             player.setNumber();
             userNum = player.getNumber();
