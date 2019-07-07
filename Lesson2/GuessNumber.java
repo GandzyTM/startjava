@@ -3,26 +3,34 @@ import java.util.Random;
 public class GuessNumber {
     Random random = new Random();
     private int computerNum = random.nextInt(100);
-    private int userNum;
+    private int count;
 
-    public void playGame(Player player) {
-        while(computerNum != userNum) {
-            System.out.print(player.getName() + " please enter your number: ");
-            player.setNumber();
-            userNum = player.getNumber();
-            if (userNum < 0 || userNum > 100) {
-                System.out.println("You entered number < 0 or > 100");
-            }
+    public int getCount() {
+        return count;
+    }
 
-            if (userNum >= 0 && userNum <= 100) {
-                if (computerNum > userNum) {
-                    System.out.println("Entered number LESS than the hidden number. next player: ");
-                } else if (computerNum < userNum) {
-                    System.out.println("Entered number GREATER than the hidden number. next player: ");
-                }
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public void playGame(int userNum) {
+        if (userNum < 0 || userNum > 100) {
+            System.out.println("You entered number < 0 or > 100");
+        }
+
+        if (userNum >= 0 && userNum <= 100) {
+            if (computerNum > userNum) {
+                System.out.println("Entered number LESS than the hidden number. Next player ");
+                setCount(1);
+            } else if (computerNum < userNum) {
+                System.out.println("Entered number GREATER than the hidden number. Next player ");
+                setCount(1);
+            } else if (computerNum == userNum) {
+                System.out.println("You are right!!! it is a " + computerNum);
+                setCount(0);
             }
-        } // end of main while
-        System.out.println("You are right!!! it is a " + computerNum);
+        }
     } // end void playGame
 }
+
 

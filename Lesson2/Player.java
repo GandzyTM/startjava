@@ -3,10 +3,10 @@ import java.util.Scanner;
 public class Player {
     private int number;
     private String name;
+    private boolean result;
 
-    public Player() {
-        Scanner scan = new Scanner(System.in);
-        this.name = scan.next();
+    public Player(String name) {
+        this.name = name;
     }
 
     public String getName() {
