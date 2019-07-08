@@ -1,19 +1,56 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class GuessNumber {
-    Random random = new Random();
-    private int computerNum = random.nextInt(100);
-    private int count;
+	Random random = new Random();
+	private int computerNum = random.nextInt(100);
+	private int count;
+	private String player1;
+	private String player2;
+	private int userNum;
+
+    public GuessNumber(String player1, String player2) {
+        this.player1 = player1;
+        this.player2 = player2;
+    }
 
     public int getCount() {
-        return count;
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+    public int getUserNum() {
+        return userNum;
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setUserNum(int userNum) {
+        this.userNum = userNum;
     }
 
-    public void playGame(int userNum) {
+    public void playGame() {
+        Scanner scan = new Scanner(System.in);
+        int count = 1;
+        while (count != 0) {
+            if (count == 1) {
+                System.out.print(player1 + " please enter your number: ");
+                setUserNum(scan.nextInt());
+                checkNum(getUserNum());
+                count = getCount();
+            }
+
+            if (count == 1) {
+                System.out.print(player2 + " please enter your number: ");
+                setUserNum(scan.nextInt());
+                checkNum(getUserNum());
+                count = getCount();
+            }
+        }
+	} // end void playGame
+
+    private void checkNum(int userNum) {
         if (userNum < 0 || userNum > 100) {
             System.out.println("You entered number < 0 or > 100");
         }
@@ -30,7 +67,5 @@ public class GuessNumber {
                 setCount(0);
             }
         }
-    } // end void playGame
+    }
 }
-
-
