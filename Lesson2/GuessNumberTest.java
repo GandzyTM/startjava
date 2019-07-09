@@ -14,8 +14,8 @@ public class GuessNumberTest {
 			System.out.println("Today play: " + player1.getName() + " " + player2.getName());
 			System.out.println("Computer got a number. What number do you think?");
 
-			GuessNumber playGame = new GuessNumber(player1.getName(), player2.getName());
-			playGame.playGame();
+			GuessNumber playGame = new GuessNumber();
+			playGame.playGame(player1, player2);
 
 			do {
 				System.out.print("Хотите продолжить? [да/нет]: ");
