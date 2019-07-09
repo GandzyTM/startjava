@@ -1,3 +1,5 @@
+package GuessNumber;
+
 public class Player {
 	private String name;
 	private int number;
@@ -10,11 +12,11 @@ public class Player {
 		return name;
 	}
 
-    public int getNumber() {
-        return number;
-    }
+	public int getNumber() {
+		return number;
+	}
 
-    public void setNumber(int number) {
-        this.number = number;
-    }
+	public void setNumber(int number) {
+		this.number = number;
+	}
 }
