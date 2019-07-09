@@ -3,15 +3,16 @@ import java.util.Scanner;
 
 public class GuessNumber {
 	Random random = new Random();
-	private int computerNum = random.nextInt(100);
+	private int computerNum = random.nextInt(101);
 	private int count;
-	private String player1;
-	private String player2;
+//	private String player1;
+//	private String player2;
 
-	public GuessNumber(String player1, String player2) {
-		this.player1 = player1;
-		this.player2 = player2;
-	}
+//	public GuessNumber() {
+////		this.player1 = player1;
+////		this.player2 = player2;
+////		player.getName();
+//	}
 
 	public int getCount() {
 		return count;
@@ -20,24 +21,22 @@ public class GuessNumber {
 	public void setCount(int count) {
 		this.count = count;
 	}
-	
-	public void playGame() {
+
+	public void playGame(Player player1, Player player2) {
 		Scanner scan = new Scanner(System.in);
 		int count = 1;
 		while (count != 0) {
 			if (count == 1) {
-				Player player = new Player(player1);
-				System.out.print(player1 + " please enter your number: ");
-				player.setNumber(scan.nextInt());
-				checkNum(player.getNumber());
+				System.out.print(player1.getName() + " please enter your number: ");
+				player1.setNumber(scan.nextInt());
+				checkNum(player1.getNumber());
 				count = getCount();
 			}
 
 			if (count == 1) {
-				Player player = new Player(player2);
-				System.out.print(player2 + " please enter your number: ");
-				player.setNumber(scan.nextInt());
-				checkNum(player.getNumber());
+				System.out.print(player2.getName() + " please enter your number: ");
+				player2.setNumber(scan.nextInt());
+				checkNum(player2.getNumber());
 				count = getCount();
 			}
 		}
