@@ -23,14 +23,16 @@ public class GuessNumber {
         } // end while
     } // end void playGame
 
-    private boolean checkNum(Player player) {
+    private void setNumber(Player player) {
         Scanner scan = new Scanner(System.in);
         System.out.print(player.getName() + " please enter your number: ");
         player.setNumber(scan.nextInt());
-        
+    }
+
+    private boolean checkNum(Player player) {
+
         if (player.getNumber() < 0 || player.getNumber() > 100) {
             System.out.println(player.getName() + " you entered number < 0 or > 100");
-            return false;
         }
 
         if (player.getNumber() >= 0 && player.getNumber() <= 100) {
