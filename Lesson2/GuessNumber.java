@@ -2,9 +2,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GuessNumber {
-    Random random = new Random();
+    private Random random = new Random();
     private int computerNum = random.nextInt(101);
-    private boolean win = false;
     private Player player1;
     private Player player2;
 
@@ -14,36 +13,36 @@ public class GuessNumber {
     }
 
     public void playGame() {
-        Scanner scan = new Scanner(System.in);
         while (true) {
-            System.out.print(player1.getName() + " please enter your number: ");
-            player1.setNumber(scan.nextInt());
-            if (checkNum(player1.getNumber(), player1.getName()) == false) {
+            if (checkNum(player1)) {
                 break;
             }
-            System.out.print(player2.getName() + " please enter your number: ");
-            player2.setNumber(scan.nextInt());
-            if (checkNum(player2.getNumber(), player2.getName()) == false) {
+            if (checkNum(player2)) {
                 break;
             }
         } // end while
     } // end void playGame
 
-    private boolean checkNum(int userNum, String player) {
-        if (userNum < 0 || userNum > 100) {
-            System.out.println(player + " you entered number < 0 or > 100");
+    private boolean checkNum(Player player) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print(player.getName() + " please enter your number: ");
+        player.setNumber(scan.nextInt());
+        
+        if (player.getNumber() < 0 || player.getNumber() > 100) {
+            System.out.println(player.getName() + " you entered number < 0 or > 100");
+            return false;
         }
 
-        if (userNum >= 0 && userNum <= 100) {
-            if (computerNum > userNum) {
-                System.out.println(player + " you entered number LESS than the hidden number. Next player ");
-            } else if (computerNum < userNum) {
-                System.out.println(player + " you entered number GREATER than the hidden number. Next player ");
-            } else if (computerNum == userNum) {
-                System.out.println(player + " WINs! You are right!!! it is a " + computerNum);
-                return false;
+        if (player.getNumber() >= 0 && player.getNumber() <= 100) {
+            if (computerNum > player.getNumber()) {
+                System.out.println(player.getName() + " you entered number LESS than the hidden number. Next player ");
+            } else if (computerNum < player.getNumber()) {
+                System.out.println(player.getName() + " you entered number GREATER than the hidden number. Next player ");
+            } else if (computerNum == player.getNumber()) {
+                System.out.println(player.getName() + " WINs! You are right!!! it is a " + computerNum);
+                return true;
             }
         }
-        return true;
+        return false;
     } // end checkNum
 }
