@@ -20,8 +20,8 @@ public class GuessNumber {
             if (makeMove(player2)) {
                 break;
             }
-        } // end while
-    } // end void playGame
+        }
+    }
 
     private boolean makeMove(Player player) {
         inputNumber(player);
