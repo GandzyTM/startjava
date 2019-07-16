@@ -1,7 +1,6 @@
 public class Player {
     private String name;
     private int number;
-    private boolean win;
 
     public Player(String name) {
         this.name = name;
@@ -15,7 +14,12 @@ public class Player {
         return number;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public boolean setNumber(int number) {
+        if (number < 0 || number > 100) {
+            return false;
+        } else {
+            this.number = number;
+            return true;
+        }
     }
 }

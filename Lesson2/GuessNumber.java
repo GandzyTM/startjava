@@ -29,11 +29,11 @@ public class GuessNumber {
     }
 
     private void inputNumber(Player player) {
-        System.out.print(player.getName() + " please enter your number: ");
-        player.setNumber(scan.nextInt());
-
-        if (player.getNumber() < 0 || player.getNumber() > 100) {
-            System.out.println(player.getName() + " you entered number < 0 or > 100");
+        while (true) {
+            System.out.print(player.getName() + " please enter your number: ");
+            if (player.setNumber(scan.nextInt())) {
+                break;
+            }
         }
     }
 
@@ -47,5 +47,5 @@ public class GuessNumber {
             return true;
         }
         return false;
-    } // end checkNum
+    }
 }
