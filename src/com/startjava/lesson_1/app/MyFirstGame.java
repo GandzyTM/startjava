@@ -1,3 +1,5 @@
+package com.startjava.lesson_1.app;
+
 public class MyFirstGame {
     public static void main(String[] args) {
         System.out.println("Enter a number between 0 and 100: ");

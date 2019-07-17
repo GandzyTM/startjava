@@ -1,3 +1,5 @@
+package com.startjava.lesson_1.app;
+
 public class Cycle {
     public static void main(String[] args) {
         System.out.println("------- All nums wtih FOR [0,20] -----------");
