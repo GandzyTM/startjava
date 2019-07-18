@@ -17,9 +17,9 @@ public class ElementArrayMinAvg {
         }
         int avg = sum / numbers.length;
 
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] < avg) {
-                System.out.println("Number < avg: " + numbers[i]);
+        for (int number : numbers) {
+            if (number < avg) {
+                System.out.println("Number < avg: " + number);
             }
         }
     }

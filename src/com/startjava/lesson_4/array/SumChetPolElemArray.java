@@ -1,5 +1,5 @@
-/**
- * Сумма четных положительных элементов массива
+/*
+  Сумма четных положительных элементов массива
 */
 package com.startjava.lesson_4.array;
 
@@ -15,10 +15,8 @@ public class SumChetPolElemArray {
         }
 
         int sum = 0;
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] > 0 && numbers[i] % 2 == 0) {
-                sum += numbers[i];
-            }
+        for (int number : numbers) {
+            if (number > 0 && number % 2 == 0) sum += number;
         }
         System.out.println("Sum = " + sum);
 

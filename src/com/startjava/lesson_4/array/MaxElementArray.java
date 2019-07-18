@@ -1,5 +1,5 @@
-/**
- * Максимальный из элементов массива с четными индексами
+/*
+  Максимальный из элементов массива с четными индексами
  */
 
 package com.startjava.lesson_4.array;
@@ -21,9 +21,7 @@ public class MaxElementArray {
 
         int m = 0;
         for (int i = 0; i < numbers.length; i += 2) {
-            if (numbers[i] > numbers[m]) {
-                m = i;
-            }
+            if (numbers[i] > numbers[m]) m = i;
         }
         System.out.println(m + " - " + numbers[m]);
 
