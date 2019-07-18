@@ -31,11 +31,6 @@ class Calculator {
                 return num1 % num2;
             case "^":
                 return (int) Math.pow(num1, num2);
-//                int result = 1;
-//                for (int i = 1; i <= num2; i++) {
-//                    result *= num1;
-//                }
-//                return result;
             default:
                 System.out.println("Неверный знак математической операции");
         }
