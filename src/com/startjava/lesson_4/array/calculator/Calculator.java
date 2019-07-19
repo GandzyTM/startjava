@@ -8,24 +8,12 @@ class Calculator {
     private int num2;
     private String operation;
 
-    private void setNum1(int num1) {
-        this.num1 = num1;
-    }
-
     int getNum1() {
         return num1;
     }
 
-    private void setNum2(int num2) {
-        this.num2 = num2;
-    }
-
     int getNum2() {
         return num2;
-    }
-
-    private void setOperation(String operation) {
-        this.operation = operation;
     }
 
     String getOperation() {
@@ -37,9 +25,9 @@ class Calculator {
         String[] expression = new String[3];
         Arrays.setAll(expression, i -> scan.next());
 
-        setNum1(Integer.parseInt(expression[0]));
-        setNum2(Integer.parseInt(expression[2]));
-        setOperation(expression[1]);
+        num1 = Integer.parseInt(expression[0]);
+        num2 = Integer.parseInt(expression[2]);
+        operation = expression[1];
     }
 
     int calculate(int num1, String operation, int num2) {
