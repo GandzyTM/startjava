@@ -1,5 +1,6 @@
 package com.startjava.lesson_4.array.calculator;
 
+import javax.sound.midi.Soundbank;
 import java.util.Scanner;
 
 class CalculatorTest {
@@ -7,19 +8,12 @@ class CalculatorTest {
         String choice = "да";
         while (choice.equals("да")) {
             Calculator calc = new Calculator();
+
+            System.out.print("Введите математическое выражение: ");
+            calc.setArray();
+            System.out.println("Вывод: " + calc.calculate(calc.getNum1(), calc.getOperation(), calc.getNum2()));
+
             Scanner scan = new Scanner(System.in);
-
-            System.out.print("Введите первое число: ");
-            calc.setNum1(scan.nextInt());
-
-            System.out.print("Введите знак математической операции: ");
-            calc.setOperation(scan.next());
-
-            System.out.print("Введите второе число: ");
-            calc.setNum2(scan.nextInt());
-
-            System.out.println(calc.calculate());
-
             do {
                 System.out.print("Хотите продолжить? [да/нет]: ");
                 choice = scan.next();
