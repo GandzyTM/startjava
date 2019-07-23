@@ -1,43 +1,29 @@
 package com.startjava.lesson_4.calculator;
 
 class Calculator {
-    private int num1;
-    private int num2;
-    private String operation;
+    private String[] mathExpression = new String[3];
 
-    int getNum1() {
-        return num1;
-    }
-
-    int getNum2() {
-        return num2;
-    }
-
-    String getOperation() {
-        return operation;
-    }
-
-   public void setMathOperation(String mathExpression) {
-        String[] expression = mathExpression.split(" ");
-        num1 = Integer.parseInt(expression[0]);
-        num2 = Integer.parseInt(expression[2]);
-        operation = expression[1];
+    void setMathOperation(String expression) {
+        mathExpression = expression.split(" ");
+//        for (int i = 0; i < mathExpression.length; i++) {
+//            System.out.println(mathExpression[i]);
+//        }
     }
 
     int calculate() {
-        switch (operation) {
+        switch (mathExpression[1]) {
             case "+":
-                return num1 + num2;
+                return Integer.parseInt(mathExpression[0]) + Integer.parseInt(mathExpression[2]);
             case "-":
-                return num1 - num2;
+                return Integer.parseInt(mathExpression[0]) - Integer.parseInt(mathExpression[2]);
             case "/":
-                return num1 / num2;
+                return Integer.parseInt(mathExpression[0]) / Integer.parseInt(mathExpression[2]);
             case "*":
-                return num1 * num2;
+                return Integer.parseInt(mathExpression[0]) * Integer.parseInt(mathExpression[2]);
             case "%":
-                return num1 % num2;
+                return Integer.parseInt(mathExpression[0]) % Integer.parseInt(mathExpression[2]);
             case "^":
-                return (int) Math.pow(num1, num2);
+                return (int) Math.pow(Integer.parseInt(mathExpression[0]), Integer.parseInt(mathExpression[2]));
             default:
                 System.out.println("Неверный знак математической операции");
         }
