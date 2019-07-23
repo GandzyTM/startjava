@@ -1,4 +1,4 @@
-package com.startjava.lesson_4.array.calculator;
+package com.startjava.lesson_4.calculator;
 
 import java.util.Scanner;
 
@@ -9,7 +9,9 @@ class CalculatorTest {
             Calculator calc = new Calculator();
 
             System.out.print("Введите математическое выражение: ");
-            calc.setArray();
+            Scanner scanner = new Scanner(System.in);
+            calc.setMathOperation(scanner.nextLine());
+
             System.out.println("Вывод: " + calc.calculate(calc.getNum1(), calc.getOperation(), calc.getNum2()));
 
             Scanner scan = new Scanner(System.in);
