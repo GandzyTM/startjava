@@ -17,14 +17,14 @@ class Calculator {
         return operation;
     }
 
-    public void setMathOperation(String expression) {
-        String[] exp = expression.split(" ");
-        num1 = Integer.parseInt(exp[0]);
-        num2 = Integer.parseInt(exp[2]);
-        operation = exp[1];
+   public void setMathOperation(String mathExpression) {
+        String[] expression = mathExpression.split(" ");
+        num1 = Integer.parseInt(expression[0]);
+        num2 = Integer.parseInt(expression[2]);
+        operation = expression[1];
     }
 
-    int calculate(int num1, String operation, int num2) {
+    int calculate() {
         switch (operation) {
             case "+":
                 return num1 + num2;
