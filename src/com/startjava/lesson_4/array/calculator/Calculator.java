@@ -1,7 +1,4 @@
-package com.startjava.lesson_4.array.calculator;
-
-import java.util.Arrays;
-import java.util.Scanner;
+package com.startjava.lesson_4.calculator;
 
 class Calculator {
     private int num1;
@@ -20,14 +17,11 @@ class Calculator {
         return operation;
     }
 
-    void setArray() {
-        Scanner scan = new Scanner(System.in);
-        String[] expression = new String[3];
-        Arrays.setAll(expression, i -> scan.next());
-
-        num1 = Integer.parseInt(expression[0]);
-        num2 = Integer.parseInt(expression[2]);
-        operation = expression[1];
+    public void setMathOperation(String expression) {
+        String[] exp = expression.split(" ");
+        num1 = Integer.parseInt(exp[0]);
+        num2 = Integer.parseInt(exp[2]);
+        operation = exp[1];
     }
 
     int calculate(int num1, String operation, int num2) {
