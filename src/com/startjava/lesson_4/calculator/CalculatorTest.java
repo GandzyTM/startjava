@@ -12,7 +12,7 @@ class CalculatorTest {
             System.out.print("Введите математическое выражение: ");
             calc.setMathOperation(scanner.nextLine());
 
-            System.out.println("Вывод: " + calc.calculate(calc.getNum1(), calc.getOperation(), calc.getNum2()));
+            System.out.println("Вывод: " + calc.calculate());
             
             do {
                 System.out.print("Хотите продолжить? [да/нет]: ");
