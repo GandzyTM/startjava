@@ -10,13 +10,13 @@ class CalculatorTest {
             Calculator calc = new Calculator();
 
             System.out.print("Введите математическое выражение: ");
-            calc.setMathOperation(scanner.nextLine());
+            calc.splitMathOperation(scanner.nextLine());
 
             System.out.println("Вывод: " + calc.calculate());
-            
+
             do {
                 System.out.print("Хотите продолжить? [да/нет]: ");
-                choice = scanner.next();
+                choice = scanner.nextLine();
             } while (!choice.equals("да") && !choice.equals("нет"));
         }
     }
