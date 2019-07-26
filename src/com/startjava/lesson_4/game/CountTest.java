@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class CountTest {
-    public int[] playerNumber;
+    private int[] playerNumber;
     private int[] numbers;
 
     public static void main(String[] args) {
@@ -47,23 +47,29 @@ public class CountTest {
 //            System.out.println( myArray[i] );
 //        }
 
-        int[] numbers = new int[5];
+        int[] numbers = new int[0];
         int count = 0;
         do {
-            addElementToArray(numbers, scanner.nextInt());
+            addElement(numbers, scanner.nextInt());
             count++;
         } while (count < 10);
-
     }
 
-    static int[] addElement(int[] elements, int newNumber) {
+    public void setPlayerNumber(int[] playerNumber, int number) {
+        this.playerNumber = addElement(playerNumber, number);
+    }
+
+    public int[] getPlayerNumber() {
+        return playerNumber;
+    }
+
+    private static int[] addElement(int[] elements, int newNumber) {
         elements = Arrays.copyOf(elements, elements.length + 1);
         elements[elements.length - 1] = newNumber;
         return elements;
     }
 
-    
-    
+
     private static void addElementToArray(int[] elements, int newNumber) {
         int newSizeOutputElemets = elements.length + 1;
         int[] tempArray = new int[newSizeOutputElemets];
@@ -75,3 +81,4 @@ public class CountTest {
         System.out.println(Arrays.toString(elements));
     }
 }
+
