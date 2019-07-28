@@ -38,11 +38,19 @@ class GuessNumber {
 
     private boolean compareNumbers(Player player) {
         if (computerNum > player.getNumber()) {
-            System.out.println(player.getName() + " you entered number LESS than the hidden number. Next player ");
+            System.out.println(player.getName() + " вы ввели число МЕНЬШЕ загаданного. Следующий игрок.");
+            // add number to numberArray of player
+            player.setEnteredNumbers(player.getNumber());
         } else if (computerNum < player.getNumber()) {
-            System.out.println(player.getName() + " you entered number GREATER than the hidden number. Next player ");
+            System.out.println(player.getName() + " вы ввели число БОЛЬШЕ загаданного. Следующий игрок.");
+            // add number to numberArray of player
+            player.setEnteredNumbers(player.getNumber());
         } else if (computerNum == player.getNumber()) {
-            System.out.println(player.getName() + " WINs! You are right!!! it is a " + computerNum);
+            player.setEnteredNumbers(player.getNumber());
+            System.out.println(player.getName() + "Игрок " + player.getName()
+                    + " угадал число " + computerNum
+                    + " с " + player.getChoice() + " попытки.");
+            // return number of choice and entered numbers
             return true;
         }
         return false;
