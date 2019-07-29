@@ -8,9 +8,36 @@ public class CountTest {
     private int[] playerNumber;
     private int[] numbers;
 
+    public String setPlayerNumber(int number) {
+        playerNumber = Arrays.copyOf(playerNumber, playerNumber.length +1);
+        playerNumber[playerNumber.length - 1] = number;
+        return Arrays.toString(playerNumber);
+    }
+
+    public int[] getPlayerNumber() {
+        return Arrays.copyOf(playerNumber, playerNumber.length);
+    }
+
+//    private void addElementToArray(int newNumber) {
+//        int newSizeOutputElemets = elements.length + 1;
+//        int[] tempArray = new int[newSizeOutputElemets];
+//        for (int i = 0; i < elements.length; i++) {
+//            tempArray[i] = elements[i];
+//        }
+//        tempArray[newSizeOutputElemets - 1] = newNumber;
+//        elements = tempArray;
+//        System.out.println(Arrays.toString(elements));
+//    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
+
+        int count = 0;
+        while (count < 10) {
+            System.out.println("Enter next number: ");
+            int newNum = scanner.nextInt();
+        }
 
         int[] numbers = new int[random.nextInt(15)];
         for (int i = 0; i < numbers.length; i++) {
@@ -21,19 +48,19 @@ public class CountTest {
         int[] copyNumbers = Arrays.copyOf(numbers, 3);
         System.out.println("Copy of numbers: " + Arrays.toString(copyNumbers));
 
-        int count = 0;
-        while (count < 10) {
-            System.out.println("Enter next number: ");
-            int newNum = scanner.nextInt();
-            int newSizeArray = numbers.length + 1;
-            int[] tempArray = new int[newSizeArray];
-            for (int i = 0; i < numbers.length; i++) {
-                tempArray[i] = numbers[i];
-            }
-            tempArray[newSizeArray - 1] = newNum;
-            numbers = tempArray;
-            count++;
-        }
+//        int count = 0;
+//        while (count < 10) {
+//            System.out.println("Enter next number: ");
+//            int newNum = scanner.nextInt();
+//            int newSizeArray = numbers.length + 1;
+//            int[] tempArray = new int[newSizeArray];
+//            for (int i = 0; i < numbers.length; i++) {
+//                tempArray[i] = numbers[i];
+//            }
+//            tempArray[newSizeArray - 1] = newNum;
+//            numbers = tempArray;
+//            count++;
+//        }
         for (int num : numbers) {
             System.out.println(num);
         }
@@ -58,32 +85,6 @@ public class CountTest {
 //            count++;
 //        } while (count < 10);
 
-    }
-
-    public void setPlayerNumber(int[] playerNumber, int number) {
-        this.playerNumber = addElement(playerNumber, number);
-    }
-
-    public int[] getPlayerNumber() {
-        return playerNumber;
-    }
-
-    private int[] addElement(int[] elements, int newNumber) {
-        elements = Arrays.copyOf(elements, elements.length + 1);
-        elements[elements.length - 1] = newNumber;
-        return elements;
-    }
-
-
-    private void addElementToArray(int[] elements, int newNumber) {
-        int newSizeOutputElemets = elements.length + 1;
-        int[] tempArray = new int[newSizeOutputElemets];
-        for (int i = 0; i < elements.length; i++) {
-            tempArray[i] = elements[i];
-        }
-        tempArray[newSizeOutputElemets - 1] = newNumber;
-        elements = tempArray;
-        System.out.println(Arrays.toString(elements));
     }
 }
 

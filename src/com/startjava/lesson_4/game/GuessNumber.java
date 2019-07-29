@@ -8,6 +8,7 @@ class GuessNumber {
     private Scanner scan = new Scanner(System.in);
     private Player player1;
     private Player player2;
+    private int choiceNumber;
 
     GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
@@ -39,18 +40,18 @@ class GuessNumber {
     private boolean compareNumbers(Player player) {
         if (computerNum > player.getNumber()) {
             System.out.println(player.getName() + " вы ввели число МЕНЬШЕ загаданного. Следующий игрок.");
-            // add number to numberArray of player
+//            player.setChoice(choiceNumber++);
             player.setEnteredNumbers(player.getNumber());
         } else if (computerNum < player.getNumber()) {
             System.out.println(player.getName() + " вы ввели число БОЛЬШЕ загаданного. Следующий игрок.");
-            // add number to numberArray of player
+//            player.setChoice(choiceNumber++);
             player.setEnteredNumbers(player.getNumber());
         } else if (computerNum == player.getNumber()) {
+//            player.setChoice(choiceNumber++);
             player.setEnteredNumbers(player.getNumber());
             System.out.println(player.getName() + "Игрок " + player.getName()
                     + " угадал число " + computerNum
                     + " с " + player.getTries() + " попытки.");
-            // return number of choice and entered numbers
             return true;
         }
         return false;

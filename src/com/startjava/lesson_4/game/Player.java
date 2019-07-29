@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Player {
     private String name;
     private int number;
-    private int[] enteredNumbers = new int[1];
+    private int[] enteredNumbers = new int[10];
     private int choice;
 
     Player(String name) {
@@ -29,16 +29,26 @@ public class Player {
         }
     }
 
+    void setChoice(int choice) {
+        this.choice = choice;
+    }
+
     String getTries() {
         return Arrays.toString(enteredNumbers);
     }
 
     void setEnteredNumbers(int number) {
-        int newSizeOutputElemets = enteredNumbers.length + 1;
-        int[] tempArray = new int[newSizeOutputElemets];
-        for (int i = 0; i < enteredNumbers.length; i++) {
-            tempArray[i] = enteredNumbers[i];
-        }
-        tempArray[newSizeOutputElemets - 2] = number;
+//        enteredNumbers[choice] = number;
+        int[] tempArray = new int[enteredNumbers.length];
+        System.arraycopy(enteredNumbers, 0, tempArray, 0, enteredNumbers.length);
+//        tempArray[index position]
         enteredNumbers = tempArray;
+//        int newSizeOutputElemets = enteredNumbers.length + 1;
+//        int[] tempArray = new int[newSizeOutputElemets];
+//        for (int i = 0; i < enteredNumbers.length; i++) {
+//            tempArray[i] = enteredNumbers[i];
+//        }
+//        tempArray[newSizeOutputElemets - 2] = number;
+//        enteredNumbers = tempArray;
     }
+}
