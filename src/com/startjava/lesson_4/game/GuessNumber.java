@@ -49,7 +49,7 @@ class GuessNumber {
             player.setEnteredNumbers(player.getNumber());
             System.out.println(player.getName() + "Игрок " + player.getName()
                     + " угадал число " + computerNum
-                    + " с " + player.getChoice() + " попытки.");
+                    + " с " + player.getTries() + " попытки.");
             // return number of choice and entered numbers
             return true;
         }
