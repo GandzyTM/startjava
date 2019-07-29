@@ -29,23 +29,16 @@ public class Player {
         }
     }
 
-    String getChoice() {
+    String getTries() {
         return Arrays.toString(enteredNumbers);
     }
 
-    void setEnteredNumbers(int enteredNumber) {
+    void setEnteredNumbers(int number) {
         int newSizeOutputElemets = enteredNumbers.length + 1;
-        if (newSizeOutputElemets > 2) {
-            int[] tempArray = new int[newSizeOutputElemets];
-            for (int i = 0; i < enteredNumbers.length; i++) {
-                tempArray[i] = enteredNumbers[i];
-                tempArray[newSizeOutputElemets - 1] = enteredNumber;
-                enteredNumbers = tempArray;
-            }
-        } else if (newSizeOutputElemets == 2) {
-            int[] tempArray = new int[enteredNumbers.length];
-            tempArray[0] = enteredNumber;
-            enteredNumbers = tempArray;
+        int[] tempArray = new int[newSizeOutputElemets];
+        for (int i = 0; i < enteredNumbers.length; i++) {
+            tempArray[i] = enteredNumbers[i];
         }
+        tempArray[newSizeOutputElemets - 2] = number;
+        enteredNumbers = tempArray;
     }
-}
