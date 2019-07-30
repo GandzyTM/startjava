@@ -21,8 +21,7 @@ public class GuessNumberTest {
 
             playGame.playGame();
 
-            player1.resetEnteredNumbers();
-            player2.resetEnteredNumbers();
+            playGame.resetGame();
             do {
                 System.out.print("Хотите продолжить? [да/нет]: ");
                 choice = scan.next();

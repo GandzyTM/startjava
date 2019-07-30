@@ -37,14 +37,13 @@ class Player {
         return choice;
     }
 
-    String getTries() {
+    String getEnteredNumbers() {
         return Arrays.toString(Arrays.copyOf(enteredNumbers, choice));
     }
 
     void resetEnteredNumbers() {
-        int[] copyNumbers = Arrays.copyOf(enteredNumbers, choice);
-        Arrays.fill(copyNumbers, 0);
-        enteredNumbers = copyNumbers;
+        Arrays.fill(enteredNumbers, 0, choice, 0);
+        choice = 0;
     }
 
     void setEnteredNumbers(int number) {

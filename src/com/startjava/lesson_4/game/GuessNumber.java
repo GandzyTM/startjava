@@ -14,6 +14,12 @@ class GuessNumber {
         this.player2 = player2;
     }
 
+    void resetGame() {
+        computerNum = new Random().nextInt(101);
+        player1.resetEnteredNumbers();
+        player2.resetEnteredNumbers();
+    }
+
     void playGame() {
         while (true) {
             if (makeMove(player1)) {
@@ -51,7 +57,7 @@ class GuessNumber {
             System.out.println("Игрок " + player.getName()
                     + " угадал число " + computerNum
                     + " с " + player.getChoice() + " попытки.");
-            System.out.println("Введенные игроком числа: " + player.getTries());
+            System.out.println("Введенные игроком числа: " + player.getEnteredNumbers());
             return true;
         }
         return false;
