@@ -2,7 +2,7 @@ package com.startjava.lesson_4.game;
 
 import java.util.Arrays;
 
-public class Player {
+class Player {
     private String name;
     private int number;
     private int[] enteredNumbers = new int[10];
@@ -16,7 +16,7 @@ public class Player {
         return name;
     }
 
-    public int getNumber() {
+    int getNumber() {
         return number;
     }
 
@@ -39,6 +39,10 @@ public class Player {
 
     String getTries() {
         return Arrays.toString(Arrays.copyOf(enteredNumbers, choice));
+    }
+
+    void resetEnteredNumbers() {
+        Arrays.fill(Arrays.copyOf(enteredNumbers, choice), 0);
     }
 
     void setEnteredNumbers(int number) {
