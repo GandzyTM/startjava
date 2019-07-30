@@ -5,20 +5,24 @@ import java.util.Scanner;
 public class GuessNumberTest {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        System.out.print("Первый игрок введите своё имя: ");
+        Player player1 = new Player(scan.next());
+
+        System.out.print("Второй игрок введите своё имя: ");
+        Player player2 = new Player(scan.next());
+
+        GuessNumber playGame = new GuessNumber(player1, player2);
+
         String choice = "да";
         while (choice.equals("да")) {
-            System.out.print("First player enter your name: ");
-            Player player1 = new Player(scan.next());
 
-            System.out.print("Second player enter your name: ");
-            Player player2 = new Player(scan.next());
+            System.out.println("Сегодня играют: " + player1.getName() + " " + player2.getName());
+            System.out.println("ИИ загадал число. Как вы думаете какое?");
 
-            System.out.println("Today play: " + player1.getName() + " " + player2.getName());
-            System.out.println("Computer got a number. What number do you think?");
-
-            GuessNumber playGame = new GuessNumber(player1, player2);
             playGame.playGame();
 
+            player1.resetEnteredNumbers();
+            player2.resetEnteredNumbers();
             do {
                 System.out.print("Хотите продолжить? [да/нет]: ");
                 choice = scan.next();

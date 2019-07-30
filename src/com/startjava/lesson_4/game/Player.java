@@ -42,7 +42,9 @@ class Player {
     }
 
     void resetEnteredNumbers() {
-        Arrays.fill(Arrays.copyOf(enteredNumbers, choice), 0);
+        int[] copyNumbers = Arrays.copyOf(enteredNumbers, choice);
+        Arrays.fill(copyNumbers, 0);
+        enteredNumbers = copyNumbers;
     }
 
     void setEnteredNumbers(int number) {

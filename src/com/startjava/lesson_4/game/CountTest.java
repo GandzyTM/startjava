@@ -33,11 +33,11 @@ public class CountTest {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        int count = 0;
-        while (count < 10) {
-            System.out.println("Enter next number: ");
-            int newNum = scanner.nextInt();
-        }
+//        int count = 0;
+//        while (count < 10) {
+//            System.out.println("Enter next number: ");
+//            int newNum = scanner.nextInt();
+//        }
 
         int[] numbers = new int[random.nextInt(15)];
         for (int i = 0; i < numbers.length; i++) {
@@ -47,6 +47,9 @@ public class CountTest {
         System.out.println("Array: " + Arrays.toString(numbers));
         int[] copyNumbers = Arrays.copyOf(numbers, 3);
         System.out.println("Copy of numbers: " + Arrays.toString(copyNumbers));
+        System.out.println("Copy Arrays.copyOf: " + Arrays.toString(Arrays.copyOf(numbers, 4)));
+        Arrays.fill(Arrays.copyOf(copyNumbers, copyNumbers.length), 0);
+        System.out.println("Copy Arrays.fill to 0: " + Arrays.toString(copyNumbers));
 
 //        int count = 0;
 //        while (count < 10) {
@@ -61,9 +64,9 @@ public class CountTest {
 //            numbers = tempArray;
 //            count++;
 //        }
-        for (int num : numbers) {
-            System.out.println(num);
-        }
+//        for (int num : numbers) {
+//            System.out.println(num);
+//        }
 
 //        String[] myArray = new String[10];
 //// Set initial contents
