@@ -31,6 +31,9 @@ class Player {
 
     void encreaseChoice() {
         choice++;
+//        if (choice == 10) {
+//            System.out.println("Ваши попытки исчерпаны");
+//        }
     }
 
     int getChoice() {
