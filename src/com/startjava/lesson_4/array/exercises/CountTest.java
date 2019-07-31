@@ -1,4 +1,4 @@
-package com.startjava.lesson_4.game;
+package com.startjava.lesson_4.array.exercises;
 
 import java.util.Arrays;
 import java.util.Random;
