@@ -34,7 +34,7 @@ class GuessNumber {
 
     private boolean checkChoice(Player player) {
         if (player.getChoice() == 10) {
-            System.out.println("Вы исчерпали свои попытки");
+            System.out.println("У " + player.getName() + " закончились попытки");
             return true;
         }
         return false;
