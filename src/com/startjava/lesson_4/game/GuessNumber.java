@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 class GuessNumber {
-    private int computerNum = new Random().nextInt(101);
+    private int computerNum;
     private Scanner scan = new Scanner(System.in);
     private Player player1;
     private Player player2;
@@ -14,13 +14,8 @@ class GuessNumber {
         this.player2 = player2;
     }
 
-    void resetGame() {
-        computerNum = new Random().nextInt(101);
-        player1.resetEnteredNumbers();
-        player2.resetEnteredNumbers();
-    }
-
-    void playGame() {
+    public void playGame() {
+        initGame();
         while (true) {
             if (checkChoice(player1) || makeMove(player1)) {
                 break;
@@ -29,6 +24,20 @@ class GuessNumber {
                 break;
             }
         }
+    }
+
+    private void initGame() {
+        computerNum = new Random().nextInt(101);
+        player1.resetEnteredNumbers();
+        player2.resetEnteredNumbers();
+    }
+
+    private boolean checkChoice(Player player) {
+        if (player.getChoice() == 10) {
+            System.out.println("Вы исчерпали свои попытки");
+            return true;
+        }
+        return false;
     }
 
     private boolean makeMove(Player player) {
@@ -42,25 +51,17 @@ class GuessNumber {
         } while (!player.setNumber(scan.nextInt()));
     }
 
-    private boolean checkChoice(Player player) {
-        if (player.getChoice() == 2) {
-            System.out.println("Вы исчерпали свои попытки");
-            return true;
-        }
-        return false;
-    }
-
     private boolean compareNumbers(Player player) {
         if (computerNum > player.getNumber()) {
             System.out.println(player.getName() + " вы ввели число МЕНЬШЕ загаданного. Следующий игрок.");
-            player.encreaseChoice();
+            player.incChoice();
             player.setEnteredNumbers(player.getNumber());
         } else if (computerNum < player.getNumber()) {
             System.out.println(player.getName() + " вы ввели число БОЛЬШЕ загаданного. Следующий игрок.");
-            player.encreaseChoice();
+            player.incChoice();
             player.setEnteredNumbers(player.getNumber());
         } else if (computerNum == player.getNumber()) {
-            player.encreaseChoice();
+            player.incChoice();
             player.setEnteredNumbers(player.getNumber());
             System.out.println("Игрок " + player.getName()
                     + " угадал число " + computerNum

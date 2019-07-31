@@ -15,13 +15,10 @@ public class GuessNumberTest {
 
         String choice = "да";
         while (choice.equals("да")) {
-
             System.out.println("Сегодня играют: " + player1.getName() + " " + player2.getName());
             System.out.println("ИИ загадал число. Как вы думаете какое?");
 
             playGame.playGame();
-
-            playGame.resetGame();
             do {
                 System.out.print("Хотите продолжить? [да/нет]: ");
                 choice = scan.next();

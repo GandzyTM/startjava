@@ -12,15 +12,15 @@ class Player {
         this.name = name;
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 
-    int getNumber() {
+    public int getNumber() {
         return number;
     }
 
-    boolean setNumber(int number) {
+    public boolean setNumber(int number) {
         if (number < 0 || number > 100) {
             return false;
         } else {
@@ -29,27 +29,24 @@ class Player {
         }
     }
 
-    void encreaseChoice() {
+    public void incChoice() {
         choice++;
-//        if (choice == 10) {
-//            System.out.println("Ваши попытки исчерпаны");
-//        }
     }
 
-    int getChoice() {
+    public int getChoice() {
         return choice;
     }
 
-    String getEnteredNumbers() {
+    public String getEnteredNumbers() {
         return Arrays.toString(Arrays.copyOf(enteredNumbers, choice));
     }
 
-    void resetEnteredNumbers() {
-        Arrays.fill(enteredNumbers, 0, choice, 0);
-        choice = 0;
+    public void setEnteredNumbers(int number) {
+        enteredNumbers[choice - 1] = number;
     }
 
-    void setEnteredNumbers(int number) {
-        enteredNumbers[choice - 1] = number;
+    public void resetEnteredNumbers() {
+        Arrays.fill(enteredNumbers, 0, choice, 0);
+        choice = 0;
     }
 }
