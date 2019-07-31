@@ -37,12 +37,12 @@ class Player {
         return choice;
     }
 
-    public String getEnteredNumbers() {
-        return Arrays.toString(Arrays.copyOf(enteredNumbers, choice));
-    }
-
     public void setEnteredNumbers(int number) {
         enteredNumbers[choice - 1] = number;
+    }
+
+    public String getEnteredNumbers() {
+        return Arrays.toString(Arrays.copyOf(enteredNumbers, choice));
     }
 
     public void resetEnteredNumbers() {

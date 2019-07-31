@@ -19,10 +19,11 @@ public class GuessNumberTest {
             System.out.println("ИИ загадал число. Как вы думаете какое?");
 
             playGame.playGame();
+
             do {
                 System.out.print("Хотите продолжить? [да/нет]: ");
                 choice = scan.next();
             } while (!choice.equals("да") && !choice.equals("нет"));
-        } // end of main while
-    } // end of method main
+        }
+    }
 }
