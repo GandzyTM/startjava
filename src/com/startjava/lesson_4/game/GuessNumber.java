@@ -22,10 +22,10 @@ class GuessNumber {
 
     void playGame() {
         while (true) {
-            if (makeMove(player1)) {
+            if (checkChoice(player1) || makeMove(player1)) {
                 break;
             }
-            if (makeMove(player2)) {
+            if (checkChoice(player2) || makeMove(player2)) {
                 break;
             }
         }
@@ -40,6 +40,14 @@ class GuessNumber {
         do {
             System.out.print(player.getName() + " введите число: ");
         } while (!player.setNumber(scan.nextInt()));
+    }
+
+    private boolean checkChoice(Player player) {
+        if (player.getChoice() == 2) {
+            System.out.println("Вы исчерпали свои попытки");
+            return true;
+        }
+        return false;
     }
 
     private boolean compareNumbers(Player player) {
