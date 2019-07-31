@@ -42,6 +42,8 @@ class GuessNumber {
 
     private boolean makeMove(Player player) {
         inputNumber(player);
+        player.incChoice();
+        player.setEnteredNumbers(player.getNumber());
         return compareNumbers(player);
     }
 
@@ -54,15 +56,9 @@ class GuessNumber {
     private boolean compareNumbers(Player player) {
         if (computerNum > player.getNumber()) {
             System.out.println(player.getName() + " вы ввели число МЕНЬШЕ загаданного. Следующий игрок.");
-            player.incChoice();
-            player.setEnteredNumbers(player.getNumber());
         } else if (computerNum < player.getNumber()) {
             System.out.println(player.getName() + " вы ввели число БОЛЬШЕ загаданного. Следующий игрок.");
-            player.incChoice();
-            player.setEnteredNumbers(player.getNumber());
         } else if (computerNum == player.getNumber()) {
-            player.incChoice();
-            player.setEnteredNumbers(player.getNumber());
             System.out.println("Игрок " + player.getName()
                     + " угадал число " + computerNum
                     + " с " + player.getChoice() + " попытки.");
