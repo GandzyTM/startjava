@@ -62,7 +62,8 @@ class GuessNumber {
             System.out.println("Игрок " + player.getName()
                     + " угадал число " + computerNum
                     + " с " + player.getChoice() + " попытки.");
-            System.out.println("Введенные игроком числа: " + player.getEnteredNumbers());
+            player.getEnteredNumbers();
+//            System.out.print("Введенные игроком числа: " + player.getEnteredNumbers());
             return true;
         }
         return false;
