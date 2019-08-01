@@ -43,7 +43,7 @@ class Player {
 
     public void getEnteredNumbers() {
 //        return Arrays.toString(Arrays.copyOf(enteredNumbers, choice));
-        System.out.print("Введенные игроком числа: ");
+        System.out.print("Введенные игроком " + getName() + " числа: ");
         for (int i = 0; i < Arrays.copyOf(enteredNumbers, choice).length; i++) {
             System.out.print(enteredNumbers[i] + " ");
         }
