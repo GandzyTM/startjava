@@ -18,9 +18,13 @@ class GuessNumber {
         initGame();
         while (true) {
             if (checkChoice(player1) || makeMove(player1)) {
+                player1.getEnteredNumbers();
+                player2.getEnteredNumbers();
                 break;
             }
             if (checkChoice(player2) || makeMove(player2)) {
+                player2.getEnteredNumbers();
+                player1.getEnteredNumbers();
                 break;
             }
         }
@@ -62,7 +66,7 @@ class GuessNumber {
             System.out.println("Игрок " + player.getName()
                     + " угадал число " + computerNum
                     + " с " + player.getChoice() + " попытки.");
-            player.getEnteredNumbers();
+//            player.getEnteredNumbers();
 //            System.out.print("Введенные игроком числа: " + player.getEnteredNumbers());
             return true;
         }
