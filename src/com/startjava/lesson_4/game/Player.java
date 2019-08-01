@@ -41,13 +41,8 @@ class Player {
         enteredNumbers[choice - 1] = number;
     }
 
-    public void getEnteredNumbers() {
-//        return Arrays.toString(Arrays.copyOf(enteredNumbers, choice));
-        System.out.print("Введенные игроком " + getName() + " числа: ");
-        for (int i = 0; i < Arrays.copyOf(enteredNumbers, choice).length; i++) {
-            System.out.print(enteredNumbers[i] + " ");
-        }
-        System.out.println("");
+    public String getEnteredNumbers() {
+        return Arrays.toString(Arrays.copyOf(enteredNumbers, choice));
     }
 
     public void resetEnteredNumbers() {
