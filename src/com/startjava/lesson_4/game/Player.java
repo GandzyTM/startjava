@@ -41,8 +41,8 @@ class Player {
         enteredNumbers[choice - 1] = number;
     }
 
-    public String getEnteredNumbers() {
-        return Arrays.toString(Arrays.copyOf(enteredNumbers, choice));
+    public int[] getEnteredNumbers() {
+        return Arrays.copyOf(enteredNumbers, choice);
     }
 
     public void resetEnteredNumbers() {
