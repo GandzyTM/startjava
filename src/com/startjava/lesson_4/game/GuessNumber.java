@@ -74,7 +74,7 @@ class GuessNumber {
     }
 
     private void getPlayerNumber(Player player) {
-        System.out.println("Введенное игроком " + player.getName() + " числа: ");
+        System.out.println("Введенные игроком " + player.getName() + " числа: ");
         for (int i = 0; i < player.getEnteredNumbers().length; i++) {
             System.out.print(player.getEnteredNumbers()[i] + " ");
         }
