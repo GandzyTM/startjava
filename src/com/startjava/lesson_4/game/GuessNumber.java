@@ -1,6 +1,5 @@
 package com.startjava.lesson_4.game;
 
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -19,14 +18,13 @@ class GuessNumber {
         initGame();
         while (true) {
             if (checkChoice(player1) || makeMove(player1)) {
-                getPlayerNumber(player1);
                 break;
             }
             if (checkChoice(player2) || makeMove(player2)) {
-                getPlayerNumber(player2);
                 break;
             }
         }
+        playerEnteredNumber();
     }
 
     private void initGame() {
@@ -65,18 +63,20 @@ class GuessNumber {
             System.out.println("Игрок " + player.getName()
                     + " угадал число " + computerNum
                     + " с " + player.getChoice() + " попытки.");
-//            player.getEnteredNumbers();
-//            System.out.print("Введенные игроком числа: " + player.getEnteredNumbers());
             return true;
         }
         return false;
     }
 
+    private void playerEnteredNumber() {
+        getPlayerNumber(player1);
+        getPlayerNumber(player2);
+    }
+
     private void getPlayerNumber(Player player) {
         System.out.println("Введенное игроком " + player.getName() + " числа: ");
-        String[] test = player.getEnteredNumbers().split(" ");
-        for (int i = 0; i < test.length; i++) {
-            System.out.print(test[i]);
+        for (int i = 0; i < player.getEnteredNumbers().length; i++) {
+            System.out.print(player.getEnteredNumbers()[i] + " ");
         }
         System.out.println("");
     }
